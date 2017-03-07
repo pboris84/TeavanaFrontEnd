@@ -1,0 +1,22 @@
+{
+  "name": "boris",
+  "version": "1.0.0",
+  "description": "teavanadb",
+  "main": "hello-sql.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pboris84/TeavanaFrontEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pboris84/TeavanaFrontEnd/issues"
+  },
+  "homepage": "https://github.com/pboris84/TeavanaFrontEnd#readme",
+  "dependencies": {
+    "seriate": "^0.9.0"
+  }
+}
