@@ -1,4 +1,4 @@
-var sql = require("seriate");
+var sql = require("node_modules/seriate");
 
 // Change the config settings to match your 
 // SQL Server and database
