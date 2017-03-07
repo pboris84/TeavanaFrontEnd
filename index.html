@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Teavana Front End </title>
+    <meta name="author" content="Boris Pavlov, Sunho Kim, Jackson Brown" />
+  </head>
+  <body>
+<script>
+
+
+var sql = require("seriate");
+
+// Change the config settings to match your 
+// SQL Server and database
+var config = {  
+    "server": "IS-HAY04.ischool.uw.edu",
+    "user": "INFO445",
+    "password": "GoHuskies!",
+    "database": "TEAVANA"
+};
+
+sql.setDefaultConfig( config );
+
+/*
+sql.execute( {  
+        query: "SELECT * FROM [ORDER]"
+    } ).then( function( results ) {
+        console.log( results );
+    }, function( err ) {
+        console.log( "Something bad happened:", err );
+    } );
+*/
+/*
+var num = 4;  
+sql.execute( {  
+        query: "SELECT * FROM [STORE] WHERE  StoreID < @theID",
+        params: {
+            theID: {
+                type: sql.INT,
+                val: num,
+            }
+        }
+    } ).then( function( results ) {
+        console.log( results );
+    }, function( err ) {
+        console.log( "Something bad happened:", err );
+    } );
+*/
+
+var store = "Hub";
+var city = "Tea City";
+
+sql.execute( {
+        query: "EXEC dbo.addStore @StoreName = @sName, @CityName = @cName",
+        params: {
+            sName: {
+                type: sql.VARCHAR,
+                val: store
+            },
+            cName: {
+                type: sql.VARCHAR,
+                val: city
+            }
+        }
+    } ).then( function( results ) {
+        console.log( results );
+    }, function( err ) {
+        console.log( "Something bad happened:", err );
+    } );
+
+
+
+
+
+</script>
+</body>
+</html>
