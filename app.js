@@ -4,9 +4,9 @@ var app = express();
 var bodyParser = require("body-parser")
 app.use(bodyParser.urlencoded({ extended: false }));
 
-var myOutput;
+var myOutput = 'UUUUURRR';
 
-//MSSQL driver
+/*MSSQL driver
 var sql = require('mssql');
  
 sql.connect("mssql://INFO445:GoHuskies!@IS-HAY04.ischool.uw.edu/TEAVANA").then(function() {
@@ -39,13 +39,13 @@ sql.connect("mssql://INFO445:GoHuskies!@IS-HAY04.ischool.uw.edu/TEAVANA").then(f
     }).catch(function(err) {
         // ... query error checks 
     });
-*/
+
 }).catch(function(err) {
     // ... connect error checks 
 });
 
 
-
+*/
 
 
 
