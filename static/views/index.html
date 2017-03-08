@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Teavana-Admin</title>
+</head>
+
+<body>
+<div>
+	<div>
+		<div>
+			<div id="StoreForm">
+				 <h2>Add a Store</h2>
+				<div>
+					<div>
+						<form id="form" role="form" action="/createStore" method="post">
+							<div>
+								<label for="StoreName">Store Name</label>
+								<div>
+									<input type="text" id="StoreName" name="StoreName" placeholder="the store's name">
+								</div>
+							</div>
+
+							<div>
+								<label for="CityName">City</label>
+								<div>
+									<input type="text" id="CityName"name="CityName" placeholder="the store's city">
+								</div>
+							</div>
+
+							<div>
+								<div>
+									<button id="btn-StoreSubmit" type="submit">Add Store</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<button id="btn-showAllStores" type="submit">Show All Stores</button>
+			</div>
+		</div>
+	</div>
+
+
+	<div>
+		<table>
+			<thead>
+				<tr id="tablehead">
+
+				</tr>
+			</thead>
+			<tbody id="resultsTable">
+			</tbody>
+		</table>
+	</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="/js/stores.js"></script>
+</div>
+</body>
+
+</html>
