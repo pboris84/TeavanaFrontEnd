@@ -1,76 +1,34 @@
 <!DOCTYPE html>
-<html>  
-  <head>
-    <title> Teavana Front End </title>
-    <meta name="author" content="Boris Pavlov, Sunho Kim, Jackson Brown" />
-  </head>
-  <body>
-<script>
+<html>
+<body>
 
+<?php
+$servername = "IS-HAY04.ischool.uw.edu"
+$username = "INFO445";
+$password = "GoHuskies!";
+$dbname = "TEAVANA";
 
-    
-var sql = require("node_modules/seriate");
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+     die("Connection failed: " . $conn->connect_error);
+} 
 
-// Change the config settings to match your 
-// SQL Server and database
-var config = {  
-    "server": "IS-HAY04.ischool.uw.edu", //"172.28.102.110",//
-    "user": "INFO445",
-    "password": "GoHuskies!",
-    "database": "TEAVANA"
-};
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = $conn->query($sql);
 
-sql.setDefaultConfig(config);
+if ($result->num_rows > 0) {
+     // output data of each row
+     
+    echo "<br> YO DIS: ". $result;
+     
+} else {
+     echo "0 results";
+}
 
-/*
-sql.execute( {  
-        query: "SELECT * FROM [ORDER]"
-    } ).then( function( results ) {
-        console.log( results );
-    }, function( err ) {
-        console.log( "Something bad happened:", err );
-    } );
-*/
-/*
-var num = 4;  
-sql.execute( {  
-        query: "SELECT * FROM [STORE] WHERE  StoreID < @theID",
-        params: {
-            theID: {
-                type: sql.INT,
-                val: num,
-            }
-        }
-    } ).then( function( results ) {
-        console.log( results );
-    }, function( err ) {
-        console.log( "Something bad happened:", err );
-    } );
-*/
+$conn->close();
+?>  
 
-var store = "Hub";
-var city = "Tea City";
-
-sql.execute( {
-        query: "SELECT * FROM CITY"     
-    } ).then( function( results ) {
-        console.log( results );
-    }, function( err ) {
-        console.log( "Something bad happened!!!!:", err );
-    } );
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
 </body>
 </html>
