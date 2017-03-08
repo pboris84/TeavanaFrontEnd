@@ -1,34 +1,17 @@
 <!DOCTYPE html>
-<html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
 <body>
-
-<?php
-$servername = "IS-HAY04.ischool.uw.edu"
-$username = "INFO445";
-$password = "GoHuskies!";
-$dbname = "TEAVANA";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-} 
-
-$sql = "SELECT id, firstname, lastname FROM MyGuests";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-     // output data of each row
-     
-    echo "<br> YO DIS: ". $result;
-     
-} else {
-     echo "0 results";
-}
-
-$conn->close();
-?>  
+    <form action="/submit-student-data" method="post">
+        First Name: <input name="firstName" type="text" /> <br />
+        Last Name: <input name="lastName" type="text" /> <br />
+        <input type="submit" />
+    </form>
 
 </body>
 </html>
+   
